@@ -1,0 +1,38 @@
+.image { 
+	background: url('assignxor.jpg');
+	height:700px;
+	width: 1330px;
+}
+.xorcam{
+	position:absolute; top: 150px; left: 270px; z-index: 3; 
+}
+h2 { 
+	color: #FFDF00; 
+   font: bold 45px/45px Fixed, monospace;
+   position: absolute; 
+   top: 150px; 
+   left: 400px; 
+   width: 100%; 
+}
+h1{ 
+	color: #FFDF00; 
+   font: bold 45px/45px Fixed, monospace;
+   position: absolute;
+   left: 500px;
+}
+#searchmovies{
+	opacity: 0.6;
+    filter: alpha(opacity=60);
+	top: 250px; 
+	left: 420px;
+	position: absolute;
+    z-index: 3;
+}
+.maincontainer{
+	position:relative;
+	top:100px;
+	left: 100px;
+}
+div.container {
+      float: left;
+}
