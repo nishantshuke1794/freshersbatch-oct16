@@ -1,0 +1,27 @@
+<html>
+<body>
+    Enter Any Alphabet <input type="text" id="userInput"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+			var flag=0;
+            var userInput = document.getElementById("userInput").value;
+			var vow=['a','e','i','o','u','A','E','I','O','U']
+			for(var i=0;i<vow.length;i++)
+			{
+				if(userInput==vow[i]){
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1){
+				document.write("It is a vowel");
+			}
+			else{
+				document.write("It is not a vowel");
+			}
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<body>
+    Enter Num1 <input type="number" id="userInput1"></input>
+	Enter Num2 <input type="number" id="userInput2"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var userInput1 = document.getElementById("userInput1").value;
+			var userInput2 = document.getElementById("userInput2").value;
+			if(userInput1 == 0 || userInput2 == 0){
+				alert("You cant input 0");
+			}
+        }
+    </script>
+</body>
+</html>

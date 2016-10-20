@@ -1,0 +1,33 @@
+<html>
+<body>
+    Enter email address <input type="text" id="userInput"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+			var flag=0;var i;
+            var userInput = document.getElementById("userInput").value;
+			var str=userInput.substring((userInput.length-1)-4,userInput.length);
+			var str2=str=userInput.substring((userInput.length-1)-2,userInput.length);
+			if(userInput[0]=="@"){
+				alert("Invalid Email Address, Enter Again");
+				return;
+			}
+			for(i=0;i<userInput.length;i++){
+				if(userInput[i]=="@"){
+					if(str==".com" || str2==".in"){
+						document.write("Valid Email Address");
+					}
+					else
+					{
+						flag++;
+					}
+				}
+			}
+			if(flag!=0){
+				document.write("Invalid Email Address");
+			}
+        }
+    </script>
+</body>
+</html>

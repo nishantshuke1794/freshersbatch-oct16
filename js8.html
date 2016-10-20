@@ -1,0 +1,31 @@
+<html>
+<body>
+    Enter userID <input type="text" id="userInput1"></input>
+	Enter password <input type="text" id="userInput2"></input>
+    <button onclick="test()">Submit</button>
+	<p id="output"></p>
+    <script>
+			var ouser="nishant";
+			var opass="123";
+			var attempts=3;
+			document.write("<button onclick="test()">Submit</button>");
+		function test()
+        {
+            var userid = document.getElementById("userInput1").value;
+			var passwd = document.getElementById("userInput2").value;
+			while((userid!=ouser || passwd!=opass) && attempts!=0){
+				attempts--;
+				document.getElementById("output").innerHTML = "Enter Again Attempts:"+attemmpts;
+				continue;
+				if(attempts==0){
+					document.write("Error");
+				}
+			}
+			if(attempts!=0){
+			document.write("Success");
+			}
+            
+        }
+    </script>
+</body>
+</html>

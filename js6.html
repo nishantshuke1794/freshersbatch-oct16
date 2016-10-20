@@ -1,0 +1,29 @@
+<html>
+<body>
+    Enter Num1 <input type="number" id="userInput1"></input>
+	Enter Num2 <input type="number" id="userInput2"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var userInput1 = document.getElementById("userInput1").value;
+			var userInput2 = document.getElementById("userInput2").value;
+			var i;var flag=0;
+			for(i=2;i<=userInput1;i++){
+				if(userInput1%i==0){
+					flag=1;
+				}
+				if(userInput2%2==0){
+				flag=2;
+				}
+			}
+			if(flag==1){
+				document.write("Number 2 is prime");
+			}
+			if(flag==2){
+				document.write("Number 1 is prime");
+			}
+        }
+    </script>
+</body>
+</html>

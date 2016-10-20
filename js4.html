@@ -1,0 +1,27 @@
+<html>
+<body>
+    Enter Num <input type="number" id="userInput1"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var userInput1 = document.getElementById("userInput1").value;
+			var i;
+			for(i=1;i<=10;i++){
+				document.write(i*userInput1+"<br>");
+			}
+			document.write("<br>");
+			userInput1++;
+			var bool=confirm("Do you want to continue with "+userInput1); 
+			if(bool==true){
+				for(i=1;i<=10;i++){
+				document.writeln(i*userInput1);
+			}
+			}
+			else{
+				document.write("Bye");
+			}
+        }
+    </script>
+</body>
+</html>

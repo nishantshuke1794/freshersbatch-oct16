@@ -1,0 +1,17 @@
+<html>
+<body>
+    Enter Num <input type="number" id="userInput1"></input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var userInput1 = document.getElementById("userInput1").value;
+			var i; var fact=1;
+			for(i=1;i<=userInput1;i++){
+				fact=fact*i;
+			}
+            document.write(fact);
+        }
+    </script>
+</body>
+</html>
