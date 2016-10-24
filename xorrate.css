@@ -1,0 +1,108 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+#mainbody{
+    background-color: #FFFFFF;
+}
+#header{
+    float: none;
+	font: bold 40px Lobster;
+    background-color: #FFD700;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    height: 100px;
+}
+.mainimage{
+    width: 100px;
+}
+#para1{
+    font-size: 25px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+    color: white;
+}
+#mts{
+    background-color: #FFD700;
+    color: white;
+    height:50px;
+    margin-top: 20px;
+    margin-left: 700px;
+}
+#cep{
+    background-color: #FFD700;
+    color: white;
+    height:50px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#nac{
+    background-color: #FFD700;
+    color: white;
+    height:50px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.mainimg{
+	margin-top:150px;
+    margin-left: 120px;
+	float:left;
+}
+p{
+	color:#FFD700;
+}
+#text{
+	position:absolute;
+	margin-left:500px;
+	margin-top:150px;
+}
+#comment{
+	position:absolute;
+	margin-left:500px;
+	margin-top:380px;
+}
+.resizecomment{
+	height: 50px;
+}
+div.stars {
+  width: 180px;
+  display: inline-block;
+}
+input.star { display: none; }
+
+label.star {
+  float: right;
+	padding:1px;
+  font-size: 36px;
+  color: #FFD700;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+input.star-2:checked ~ label.star:before { color: #F62; }
+
+input.star-3:checked ~ label.star:before { color: #FD4; }
+
+input.star-4:checked ~ label.star:before { color: #4CBB17; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}

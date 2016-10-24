@@ -1,0 +1,176 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="xorrate.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <title>Xoriant Movies</title>
+</head>
+<body>
+<div="mainbody">
+	<div id="header">
+        <img class="mainimage" src="camxor.png">
+        <h2 id="para1"><b>Xoriant Movies</b></h2>
+        <button class="btn btn-default" id="mts" style="font-size: 18px; font-family: Yanone Kaffeesatz; border: 1px solid white;"><b>Movies, TV & 
+Showtimes</b></button>
+        <button class="btn btn-default" id="cep" style="font-size: 18px; font-family: Yanone Kaffeesatz; border: 1px solid white;"><b>Celebs, Events & 
+Photos</b></button>
+        <button class="btn btn-default" id="nac" style="font-size: 18px; font-family: Yanone Kaffeesatz; border: 1px solid white;"><b>News & 
+Community</b></button>
+    </div>
+	<div id="section1">
+		<img class="mainimg" src="tdkr.jpg" height="500" width="350"/>
+	</div>
+	<div id="text">
+		<p><b>The Dark Knight Rises</b></p>
+		<p>2012 | 180min</p>
+        <p>The Dark Knight Rises is a 2012 American superhero film.</p>
+        <p><b>Director:</b> Christopher Nolan</p>
+        <p><b>Starring:</b> Christian Bale, Tom Hardy, ...</p>
+		<p><b>Rating:<b></p>
+		<div class="stars">
+		<form action="">
+		<input class="star star-5" id="star-5" type="radio" name="star"/>
+		<label class="star star-5" for="star-5"></label>
+		<input class="star star-4" id="star-4" type="radio" name="star"/>
+		<label class="star star-4" for="star-4"></label>
+		<input class="star star-3" id="star-3" type="radio" name="star"/>
+		<label class="star star-3" for="star-3"></label>
+		<input class="star star-2" id="star-2" type="radio" name="star"/>
+		<label class="star star-2" for="star-2"></label>
+		<input class="star star-1" id="star-1" type="radio" name="star"/>
+		<label class="star star-1" for="star-1"></label>
+		</form>
+		</div>
+	</div>
+	<div id="comment">
+		<br>
+		<p><b>Comment Box</b></p>
+			<b style="color:#FFD700;">Email Id:<b> <input type="text" id="email" size="30"><br><br>
+			<b style="color:#FFD700;">Comment:<b>  <input id="resizecomment" type="text" maxlength="160" size="70" style="height:100px;"><br><br>
+			<button onclick="store()"class="btn btn-default" style="color: #FFD700; font-size: 18px; font-style:bold; font-family: Yanone Kaffeesatz; border: 
+1px solid #FFD700;">Submit</button>
+			<button onclick="display()"class="btn btn-default" style="color: #FFD700; font-size: 18px; font-style:bold; font-family: Yanone Kaffeesatz; 
+border: 1px solid #FFD700;">View</button>
+			<p id="eid"></p>
+			<p id="com"></p>
+		<script>
+			var avg;
+			avg=localStorage.getItem("Average");
+			if(avg>0 && avg<1){
+				document.getElementById("star-1").checked=true;
+			}
+			if(avg>1 && avg<2){
+				document.getElementById("star-2").checked=true;
+			}
+			if(avg>2 && avg<3){
+				document.getElementById("star-3").checked=true;
+			}
+			if(avg>3 && avg<4){
+				document.getElementById("star-4").checked=true;
+			}
+			if(avg>4 && avg<5){
+				document.getElementById("star-5").checked=true;
+			}
+			if(avg>5){
+				document.getElementById("star-5").checked=true;
+			}
+			function store(){
+				if(!(document.getElementById("star-1").checked || document.getElementById("star-2").checked || document.getElementById("star-3").checked || 
+document.getElementById("star-4").checked || document.getElementById("star-5").checked)){
+					alert("Please rate the movie");
+				}
+				else{
+				var flag=0;var i;
+				var email = document.getElementById("email").value;
+				var str=email.substring((email.length-1)-3,email.length);
+				var str2=email.substring((email.length-1)-2,email.length);
+				if(email[0]=="@"){
+					alert("Invalid Email Address, Enter Again");
+					return;
+				}
+				for(i=0;i<email.length;i++){
+				if(email[i]=="@"){
+					if(str==".com" || str2==".in"){
+						var star;var sum=0;var avg;
+						if (localStorage.getItem('stars') === null) {
+							star = [];
+						} else {
+							star = JSON.parse(localStorage.getItem('stars'));
+						}
+						if(document.getElementById("star-5").checked){
+						star.push(5);
+						alert(star);
+						localStorage.setItem('stars', JSON.stringify(star));
+						}
+						else if(document.getElementById("star-4").checked){
+						star.push(4);
+						alert(star);
+						localStorage.setItem('stars', JSON.stringify(star));
+						}
+						else if(document.getElementById("star-3").checked){
+						star.push(3);
+						alert(star);
+						localStorage.setItem('stars', JSON.stringify(star));
+						}
+						else if(document.getElementById("star-2").checked){
+						star.push(2);
+						alert(star);
+						localStorage.setItem('stars', JSON.stringify(star));
+						}
+						else if(document.getElementById("star-1").checked){
+						star.push(1);
+						alert(star);
+						localStorage.setItem('stars', JSON.stringify(star));
+					}
+				//var email=localStorage[document.getElementById("email").value];
+				/*if(email!=""){
+					alert('Already Exists!');
+				}
+				else{
+					localStorage[document.getElementById("email").value]=document.getElementById("resizecomment").value;
+				}*/
+				//localStorage.clear();
+				var star2=JSON.parse(localStorage.getItem("stars"));
+				console.log(star2);
+				for(var i=0;i<star2.length;i++){
+					sum=sum+star2[i];
+				}
+				avg=sum/star2.length;
+				localStorage.setItem("Average",avg);
+				document.getElementById("eid").innerHTML=star2.length;
+				document.getElementById("com").innerHTML=avg;
+				//var email=localStorage[document.getElementById("email").value];
+				/*if(email!=""){
+					alert('Already Exists!');
+				}
+				else{
+					localStorage[document.getElementById("email").value]=document.getElementById("resizecomment").value;
+				}*/
+				}
+				else
+				{
+						flag++;
+				}
+				}
+			}
+			if(flag!=0){
+				alert("Invalid Email Address");
+			}
+				
+				}
+			}
+		</script>
+	</div>
+</div>
+</body>
+</html>
